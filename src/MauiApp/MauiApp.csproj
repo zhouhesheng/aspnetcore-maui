@@ -37,6 +37,10 @@
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+  </PropertyGroup>
+
   <ItemGroup>
     <!--<FrameworkReference Include="Microsoft.AspNetCore.App" />-->
 
@@ -65,9 +69,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MauiApp.Web\MauiApp.Web.csproj" />
-    <Reference
-      Include="C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.0\*.dll"
-      Exclude="C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.0\aspnetcorev2_inprocess.dll">
+    <Reference Include="C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.0\*.dll" Exclude="C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.0\aspnetcorev2_inprocess.dll">
     </Reference>
   </ItemGroup>
 
