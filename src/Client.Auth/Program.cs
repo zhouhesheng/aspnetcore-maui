@@ -1,6 +1,12 @@
 ﻿using System.Net.Http.Json;
 using System.Text.Json.Nodes;
 
+/*
+curl -v --location 'http://localhost:5000/api/login' \
+--header 'accept: application/json' \
+--data '{"password":"Password1!","email":"test@contoso.com"}'
+*/
+
 HttpClient client = new HttpClient();
 client.BaseAddress = new Uri("http://localhost:5000");
 
